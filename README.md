@@ -135,21 +135,21 @@ Each plot shows token accuracy (train / val / test) and CRF training loss over e
 #### ELMo + BPE_WP
 Train accuracy converges to ~99.9%. Val/Test accuracy stabilise around 98.2%. CRF loss drops smoothly from ~4.8 to near 0 over 20 epochs.
 
-![ELMo + BPE_WP](images/1780418803768_output3.png)
+![ELMo + BPE_WP](outputs/output3.png)
 
 ---
 
 #### ELMo + NLTK
 Similar convergence pattern to BPE_WP. Val/Test accuracy plateaus around 97.8%. Slight train-val gap indicates mild overfitting.
 
-![ELMo + NLTK](images/1780418803768_output4.png)
+![ELMo + NLTK](outputs/output4.png)
 
 ---
 
 #### ELMo + Whitespace
 Val/Test accuracy stabilises around 97.8%. Loss curve follows smooth exponential decay. Comparable to NLTK performance.
 
-![ELMo + Whitespace](images/1780418803768_output5.png)
+![ELMo + Whitespace](outputs/output5.png)
 
 ---
 
@@ -158,21 +158,21 @@ Val/Test accuracy stabilises around 97.8%. Loss curve follows smooth exponential
 #### BERT + BPE_WP
 Fast convergence within 8 epochs. Train accuracy reaches ~99.9%; Val/Test stabilise ~98%. CRF loss decays sharply from ~4.5 to near 0.
 
-![BERT + BPE_WP](images/1780418803768_output8.png)
+![BERT + BPE_WP](outputs/output8.png)
 
 ---
 
 #### BERT + NLTK
 Highest Val F1 across all experiments (0.8072). Strong and stable generalisation. Loss curve nearly identical to BPE_WP variant.
 
-![BERT + NLTK](images/1780418803767_output6.png)
+![BERT + NLTK](outputs/output6.png)
 
 ---
 
 #### BERT + Whitespace
 Slightly lower test accuracy than NLTK/BPE_WP variants. Some oscillation in val/test curves after epoch 4. Loss reduction remains steep.
 
-![BERT + Whitespace](images/1780418803768_output7.png)
+![BERT + Whitespace](outputs/output7.png)
 
 ---
 
@@ -181,21 +181,21 @@ Slightly lower test accuracy than NLTK/BPE_WP variants. Some oscillation in val/
 #### GloVe + BPE_WP
 Smooth convergence over 20 epochs. Val/Test settle around 98.1%. Loss starts higher (~6.3) but decays cleanly.
 
-![GloVe + BPE_WP](images/1780418803769_output12.png)
+![GloVe + BPE_WP](outputs/output12.png)
 
 ---
 
 #### GloVe + NLTK
 More volatile val/test curves compared to BPE_WP. Accuracy plateaus around 97.5%. Loss decay is normal.
 
-![GloVe + NLTK](images/1780418803769_output13.png)
+![GloVe + NLTK](outputs/output13.png)
 
 ---
 
 #### GloVe + Whitespace
 Similar pattern to NLTK. Slight instability in later epochs. Val/Test hover around 97.5%.
 
-![GloVe + Whitespace](images/1780418803769_output14.png)
+![GloVe + Whitespace](outputs/output14.png)
 
 ---
 
@@ -204,21 +204,21 @@ Similar pattern to NLTK. Slight instability in later epochs. Val/Test hover arou
 #### FastText + BPE_WP
 High initial CRF loss (~7.3). Gradual convergence over 20 epochs. Val/Test around 97.2% with some oscillation.
 
-![FastText + BPE_WP](images/1780418803768_output9.png)
+![FastText + BPE_WP](outputs/output9.png)
 
 ---
 
 #### FastText + NLTK
 Most volatile val/test curves among all experiments. Accuracy between 96–97%. Loss decays well but generalisation is inconsistent.
 
-![FastText + NLTK](images/1780418803769_output10.png)
+![FastText + NLTK](outputs/output10.png)
 
 ---
 
 #### FastText + Whitespace
 Similar instability to NLTK variant. Lowest test accuracy among FastText pipelines (97.02%).
 
-![FastText + Whitespace](images/1780418803769_output11.png)
+![FastText + Whitespace](outputs/output11.png)
 
 ---
 
@@ -227,21 +227,21 @@ Similar instability to NLTK variant. Lowest test accuracy among FastText pipelin
 #### Word2Vec + BPE_WP
 Val/Test accuracy around 97.3%. High initial loss (~7.3) with smooth decay. Moderate generalisation gap.
 
-![Word2Vec + BPE_WP](images/1780418803769_output15.png)
+![Word2Vec + BPE_WP](outputs/output15.png)
 
 ---
 
 #### Word2Vec + NLTK
 Notable oscillation in val/test accuracy. Some spikes and dips between epochs 8–16. Lowest stability among Word2Vec variants.
 
-![Word2Vec + NLTK](images/1780418803769_output16.png)
+![Word2Vec + NLTK](outputs/output16.png)
 
 ---
 
 #### Word2Vec + Whitespace
 Comparable oscillation to NLTK variant. Val/Test hover around 96.7%. Loss decay is clean.
 
-![Word2Vec + Whitespace](images/1780418803769_output17.png)
+![Word2Vec + Whitespace](outputs/output17.png)
 
 ---
 
@@ -249,7 +249,7 @@ Comparable oscillation to NLTK variant. Val/Test hover around 96.7%. Loss decay 
 
 ### Test Accuracy — All Pipelines
 
-![Test Accuracy by Pipeline](images/1780418803767_output.png)
+![Test Accuracy by Pipeline](outputs/output.png)
 
 All pipelines achieve high token accuracy (96.9%–98.2%), with contextual embeddings (ELMo, BERT) consistently leading. The accuracy gap across pipelines is narrow (~1.2pp), but F1 score differences are more pronounced.
 
@@ -257,7 +257,7 @@ All pipelines achieve high token accuracy (96.9%–98.2%), with contextual embed
 
 ### Test F1 Score — All Pipelines
 
-![Test F1 Score by Pipeline](images/1780418803767_output2.png)
+![Test F1 Score by Pipeline](outputs/output2.png)
 
 F1 scores reveal clearer separation between embedding tiers. ELMo and BERT dominate (0.78–0.79), GloVe sits in the middle tier (0.73–0.77), and FastText/Word2Vec trail behind (0.69–0.72). BPE_WP tokenization consistently outperforms NLTK and Whitespace within each embedding family.
 
