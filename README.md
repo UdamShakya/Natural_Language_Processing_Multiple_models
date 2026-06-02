@@ -120,7 +120,7 @@ Full pipeline results ranked by Test F1 score:
 
 > 🏆 **Best pipeline: ELMo + BPE_WP — Test F1: 0.7921**
 
-![Full Results Summary](images/1780418877373_image.png)
+![Full Results Summary](outputs/summary.png)
 
 ---
 
@@ -266,18 +266,23 @@ F1 scores reveal clearer separation between embedding tiers. ELMo and BERT domin
 ## Key Findings
 
 **1. Contextual embeddings outperform static ones**
+
 ELMo and BERT consistently achieve higher F1 scores (~0.78–0.79) compared to GloVe (~0.73–0.77), FastText and Word2Vec (~0.69–0.72). The ability to generate context-sensitive representations is critical for biomedical NER.
 
 **2. BPE_WP tokenization is the best tokenizer across all embeddings**
+
 In every embedding family, BPE/WordPiece tokenization yields the highest or joint-highest F1. Its subword handling is particularly effective for rare biomedical terms.
 
 **3. BERT achieves the highest Val F1 but ELMo wins on Test F1**
+
 BERT + NLTK leads on validation (0.8072) but ELMo + BPE_WP generalises better to the test set (0.7921 vs 0.7865), suggesting ELMo is more robust on unseen biomedical text.
 
 **4. All models show significant train-val gap (overfitting)**
+
 Training accuracy reaches ~99.9% while val/test plateau at 97–98%. Regularisation strategies (higher dropout, early stopping) could improve generalisation.
 
 **5. Token accuracy is a misleading metric for NER**
+
 High token accuracy (~97–98%) is inflated by the dominance of `O` (non-entity) tags. F1 score on entity spans is the more informative metric, where scores range 0.69–0.79.
 
 ---
@@ -325,22 +330,6 @@ def save_conll(split, filename):
 save_conll('train', 'train.txt')
 save_conll('validation', 'val.txt')
 save_conll('test', 'test.txt')
-```
-
----
-
-## Project Structure
-
-```
-Natural_Language_Processing_Multiple_models/
-├── README.md
-├── requirements.txt
-├── ner_pipeline.ipynb          ← Main notebook
-├── ner_pipeline_results.csv    ← Full results table
-├── train.txt                   ← BC5CDR train split (not committed)
-├── val.txt                     ← BC5CDR val split (not committed)
-├── test.txt                    ← BC5CDR test split (not committed)
-└── .gitignore
 ```
 
 ---
